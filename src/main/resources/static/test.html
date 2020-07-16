@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>点击测试页面</title>
+    <script  type="text/javascript" src="http://localhost:8080/jquery/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+  <input type="button" onclick="testOnclick(this)" value="点我"/>
+  <input type="text"  value="输入框"/>
+  <button onclick="test1(this)">按钮1</button>
+  <button onclick="test2(this)">按钮2</button>
+  <button onclick="test3(this)">按钮3</button>
+  <a href="http://localhost:8080/test2.html">跳转</a>
+</body>
+<script type="text/javascript">
+    function  testOnclick(btn) {
+        console.log($(btn).val());
+    }
+    function  test1(btn) {
+        console.log($(btn));
+    }
+    function  test2(btn) {
+        console.log($(btn));
+    }
+    function  test3(btn) {
+        console.log($(btn));
+    }
+</script>
+<script type="text/javascript">
+    var _maq = _maq || [];
+    _maq.push(['_setAccount', 'uuid']);
+    (function () {
+        var ma = document.createElement('script');
+        ma.type = 'text/javascript';
+        ma.async = true;
+        ma.src = "http://localhost:8080/data/ma.js";
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ma, s);
+    })();
+</script>
+</html>
