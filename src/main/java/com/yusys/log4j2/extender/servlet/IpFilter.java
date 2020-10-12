@@ -12,12 +12,12 @@ import java.io.IOException;
 @WebFilter(urlPatterns = "/*",filterName = "myFilter")
 public class IpFilter implements Filter {
     private static Logger logger = LoggerFactory.getLogger(IpFilter.class);
-    private ThreadLocal<String> threadLocal = new ThreadLocal<String>();
+
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        threadLocal.set(request.getRemoteAddr());
-        ThreadContext.put("ip", threadLocal.get());
-        threadLocal.remove();
+
+        ThreadContext.put("ip", request.getRemoteAddr());
+
         chain.doFilter(request,response);
     }
 
@@ -30,7 +30,7 @@ public class IpFilter implements Filter {
     public void destroy() {
         // 清除日志上下文
         ThreadContext.clearAll();
-        threadLocal.remove();
+
         logger.info("容器销毁,清除日志上下文ThreadContext");
     }
 }

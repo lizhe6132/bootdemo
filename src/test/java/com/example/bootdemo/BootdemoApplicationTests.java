@@ -16,8 +16,8 @@ import java.util.concurrent.CountDownLatch;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@SpringBootTest
-class BootdemoApplicationTests {
+
+class BootdemoApplicationTests extends ApplicationTest{
     private final int TIMEOUT=30000;
     private CountDownLatch countDownLatch = new CountDownLatch(1);
     private final String SERVER="127.0.0.1:2181";
